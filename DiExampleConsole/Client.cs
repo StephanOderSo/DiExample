@@ -10,6 +10,11 @@ namespace DiExampleConsole
     {
         ILogger logger;
 
+        /// <summary>
+        /// Client doesn't care about ILogger Classtype
+        /// Type will be injected by constructor, from outside
+        /// </summary>
+        /// <param name="logger"></param>
         internal Client(ILogger logger)
         {
             this.logger = logger;
@@ -17,6 +22,7 @@ namespace DiExampleConsole
 
         internal void DoSomething()
         {
+            // Whether the Textlogger or ClientLogger is used is determined by the injection in the constructor
             logger.Log("Something happening here...", LogLevel.Informational);
 
             Console.WriteLine("Something happening here...");
