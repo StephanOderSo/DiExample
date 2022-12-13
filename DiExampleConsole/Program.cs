@@ -5,10 +5,13 @@ Console.WriteLine("Hello, World!");
 
 
 ConsoleLogger cLogger = new ConsoleLogger();
-TextLogger tLogger = new TextLogger();
+TextLogger tLogger = new TextLogger("C:\\temp\\di.log");
 
-Client client = new Client(cLogger);
+Client consoleClient = new Client(cLogger);
+Client textClient = new Client(tLogger);
 
-client.DoSomething();
+
+consoleClient.DoSomething();
+textClient.DoSomething();
 
 Console.ReadLine();

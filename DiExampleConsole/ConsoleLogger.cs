@@ -13,7 +13,7 @@ namespace DiExampleConsole
         public void Log(string message, LogLevel logLevel, [CallerLineNumber] int line = 0, [CallerMemberName] string caller = "", [CallerFilePath] string path = "")
         {
             string logMsg = string.Format("CustomLog: " + message);
-            logMsg += $"{Environment.NewLine} Line: {line}, CallerMember: {caller}, CallerFilePath: {path}";
+            logMsg += $" --- LogLevel: {logLevel}, Line: {line}, CallerMember: {caller}, CallerFilePath: {path}{Environment.NewLine}{Environment.NewLine}";
 
             Console.WriteLine(logMsg);
 

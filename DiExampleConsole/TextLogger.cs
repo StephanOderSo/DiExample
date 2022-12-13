@@ -9,9 +9,21 @@ namespace DiExampleConsole
 {
     internal class TextLogger : ILogger
     {
+
+        private string logPath;
+
+        internal TextLogger(string logPath)
+        {
+            this.logPath =  logPath;
+        }
+
         public void Log(string message, LogLevel logLevel, [CallerLineNumber] int line = 0, [CallerMemberName] string caller = "", [CallerFilePath] string path = "")
         {
-            throw new NotImplementedException();
+            string logMsg = string.Format("CustomLog: " + message);
+            logMsg += $" --- LogLevel: {logLevel}, Line: {line}, CallerMember: {caller}, CallerFilePath: {path}{Environment.NewLine}{Environment.NewLine}";
+
+            File.AppendAllText(logPath, logMsg);
+
         }
     }
 }
