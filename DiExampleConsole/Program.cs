@@ -15,6 +15,6 @@ Client textClient = new Client(tLogger);
 
 
 consoleClient.DoSomething();
-textClient.DoSomething();
+//textClient.DoSomething();
 
 Console.ReadLine();
