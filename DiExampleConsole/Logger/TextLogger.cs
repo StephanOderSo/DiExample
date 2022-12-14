@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace DiExampleConsole
 {
-    internal class TextLogger : ILogger
+    public class TextLogger : ILogger
     {
 
         private string logPath;
 
-        internal TextLogger(string logPath)
+        public TextLogger(string logPath)
         {
             this.logPath =  logPath;
         }

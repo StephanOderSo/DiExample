@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DiExampleConsole
 {
 
-    internal enum LogLevel
+    public enum LogLevel
     {
         Debug = 0,
         Informational = 1,

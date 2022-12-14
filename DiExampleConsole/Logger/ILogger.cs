@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DiExampleConsole
 {
-    internal interface ILogger
+    public interface ILogger
     {
         /// <summary>
         /// Write Logs

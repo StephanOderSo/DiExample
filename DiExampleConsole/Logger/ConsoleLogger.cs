@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DiExampleConsole
 {
-    internal class ConsoleLogger : ILogger
+    public class ConsoleLogger : ILogger
     {
 
         public void Log(string message, LogLevel logLevel, [CallerLineNumber] int line = 0, [CallerMemberName] string caller = "", [CallerFilePath] string path = "")

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DiExampleConsole
 {
-    internal class Client
+    public class Client
     {
         static readonly HttpClient httpClient = new HttpClient();
 
@@ -20,7 +20,7 @@ namespace DiExampleConsole
         /// Type will be injected by constructor, from outside
         /// </summary>
         /// <param name="logger"></param>
-        internal Client(ILogger logger)
+        public Client(ILogger logger)
         {
             this.logger = logger;
         }
@@ -45,7 +45,7 @@ namespace DiExampleConsole
             }
         }
 
-        private async Task<int> GetValue(string valueId)
+        public async Task<int> GetValue(string valueId)
         {
             int value = -1;
             try
@@ -61,6 +61,7 @@ namespace DiExampleConsole
             }
             catch (Exception ex)
             {
+                throw ex;
                 //ToDo: Do Something
             }
             return value;
